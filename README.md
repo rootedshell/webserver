@@ -18,7 +18,9 @@ sudo systemctl start mysql && \
 sudo a2enmod proxy_fcgi setenvif && \
 sudo a2enconf php8.3-fpm  && \
 sudo a2enmod security2  && \
-sudo sed -i "s/^\s*SecRuleEngine\s\+.*/SecRuleEngine On/" /etc/modsecurity/modsecurity.conf
+sudo sed -i "s/^\s*SecRuleEngine\s\+.*/SecRuleEngine On/" /etc/modsecurity/modsecurity.conf && \
+sudo systemctl restart apache2
+
 ```
 - Created database and table in MySQL
 - Created a login page using PHP script and connected MySQL DB
